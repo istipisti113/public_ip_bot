@@ -2,13 +2,14 @@ import discord
 import requests
 import subprocess
 import os
+from dotenv import load_dotenv
 
-TOKEN = "MTA4MzEyMDg3MDUwMDg4MDUxNA.GW1ZcX.STs0V4FmgdBmKtd7hXmi-nzHslfk-6MKXlxciQ"
+TOKEN = os.getenv("TOKEN")
 intents=discord.Intents.default()
 intents.message_content = True
 client = discord.Client(intents=intents)
 #client = discord.Client()
-apikey = "6a0453054a324405896fd9b577e4b1da"
+apikey = os.getenv("apikey")
 
 @client.event
 async def on_ready():
